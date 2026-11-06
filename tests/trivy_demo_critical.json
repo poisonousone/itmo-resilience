@@ -1,0 +1,13 @@
+{
+  "Results": [
+    {
+      "Target": "DEMONSTRATION ONLY",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "DEMO-CRITICAL-001",
+          "Severity": "CRITICAL"
+        }
+      ]
+    }
+  ]
+}

@@ -2,3 +2,9 @@
 __pycache__/
 .ipynb_checkpoints/
 .env
+.pytest_cache/
+.ruff_cache/
+ci-commit.txt
+ci-model.sha256
+trivy-image.json
+trivy-config.json

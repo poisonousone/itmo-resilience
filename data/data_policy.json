@@ -1,0 +1,8 @@
+{
+  "min_rows": {
+    "train": 10000,
+    "validation": 2000,
+    "test": 2000
+  },
+  "min_class_fraction": 0.35
+}

@@ -1,16 +1,16 @@
+import hashlib
 import json
 import time
-import hashlib
 from pathlib import Path
 
 import joblib
 import pandas as pd
 import sklearn
-from sklearn.pipeline import make_pipeline
+from sklearn.dummy import DummyClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from sklearn.dummy import DummyClassifier
+from sklearn.pipeline import make_pipeline
 
 root = Path(__file__).resolve().parent.parent
 

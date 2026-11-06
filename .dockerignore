@@ -1,0 +1,7 @@
+*
+!src/
+!src/**
+!models/
+!models/baseline.joblib
+!models/baseline.sha256
+!requirements-runtime.txt

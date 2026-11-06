@@ -1,5 +1,6 @@
-from pathlib import Path
 from functools import lru_cache
+from pathlib import Path
+
 import joblib
 
 model_path = Path(__file__).resolve().parent.parent / "models" / "baseline.joblib"
