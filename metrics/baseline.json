@@ -1,0 +1,98 @@
+{
+  "seed": 42,
+  "model": "TF-IDF + Logistic Regression",
+  "max_features": 20000,
+  "max_iter": 1000,
+  "sklearn_version": "1.9.1",
+  "training_seconds": 0.23,
+  "train_size": 11046,
+  "baseline_accuracy": 0.4997620180866254,
+  "validation": {
+    "accuracy": 0.9748110831234257,
+    "classes": {
+      "0": {
+        "precision": 0.9601482854494903,
+        "recall": 0.9932885906040269,
+        "f1-score": 0.9764373232799246,
+        "support": 1043.0
+      },
+      "1": {
+        "precision": 0.9922737306843267,
+        "recall": 0.9543524416135881,
+        "f1-score": 0.9729437229437229,
+        "support": 942.0
+      },
+      "accuracy": 0.9748110831234257,
+      "macro avg": {
+        "precision": 0.9762110080669084,
+        "recall": 0.9738205161088075,
+        "f1-score": 0.9746905231118237,
+        "support": 1985.0
+      },
+      "weighted avg": {
+        "precision": 0.9753937108455688,
+        "recall": 0.9748110831234257,
+        "f1-score": 0.974779403120377,
+        "support": 1985.0
+      }
+    },
+    "matrix": [
+      [
+        1036,
+        7
+      ],
+      [
+        43,
+        899
+      ]
+    ],
+    "count": 1985
+  },
+  "test": {
+    "accuracy": 0.934316991908615,
+    "classes": {
+      "0": {
+        "precision": 0.8884156729131175,
+        "recall": 0.9933333333333333,
+        "f1-score": 0.9379496402877698,
+        "support": 1050.0
+      },
+      "1": {
+        "precision": 0.9924487594390508,
+        "recall": 0.8753568030447193,
+        "f1-score": 0.9302325581395349,
+        "support": 1051.0
+      },
+      "accuracy": 0.934316991908615,
+      "macro avg": {
+        "precision": 0.9404322161760841,
+        "recall": 0.9343450681890263,
+        "f1-score": 0.9340910992136524,
+        "support": 2101.0
+      },
+      "weighted avg": {
+        "precision": 0.9404569741690698,
+        "recall": 0.934316991908615,
+        "f1-score": 0.9340892626876771,
+        "support": 2101.0
+      }
+    },
+    "matrix": [
+      [
+        1043,
+        7
+      ],
+      [
+        131,
+        920
+      ]
+    ],
+    "count": 2101
+  },
+  "model_sha256": "fe55ce7d2eed98ed5eb95c2645c49db848e23972a82e489b8717cba2569ca1c0",
+  "dataset_sha256": {
+    "train": "bab012fec95d4214599b18777fd6efc5cc5e9545354df581880aeca5c1d487d7",
+    "validation": "c7d14d24a14dd30a37ebe0de928b8ccdcdf6639c3c2e830b59561e2dd5fb7b55",
+    "test": "4c7a9f0fff2bf7d3f6d3e7b84863a8f5d6c48c70c3ac7fe874917074c8f27853"
+  }
+}

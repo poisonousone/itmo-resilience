@@ -21,22 +21,6 @@ Debian 13 (Trixie), Python 3.13.5. Зависимости зафиксирова
 Для воспроизведения окружения:
 
 ```bash
-git clone https://github.com/poisonousone/itmo-resilience.git
-```
-
-```bash
-cd itmo-resilience
-```
-
-```bash
-python3 -m venv .venv
-```
-
-```bash
-source .venv/bin/activate
-```
-
-```bash
 pip install -r requirements.txt
 ```
 
@@ -56,3 +40,21 @@ Notebook: `notebooks/dataset_statistics.ipynb`.
 - `models/` — сохранённые модели.
 - `tests/` — тесты.
 - `requirements.txt` — зависимости проекта.
+
+Базовая модель: TF-IDF + Logistic Regression.
+
+Обучение:
+
+`python -m src.train`
+
+Тестирование:
+
+`python -m pytest tests/ -v`
+
+Статический анализ:
+
+`python -m bandit -r src/`
+
+Модель сохраняется в `models/baseline.joblib`, метрики — в `metrics/baseline.json`.
+
+Эксперименты и визуализация представлены в `notebooks/baseline.ipynb`.
