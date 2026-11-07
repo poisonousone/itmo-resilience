@@ -69,13 +69,13 @@ jobs:
         run: cd models && sha256sum -c baseline.sha256
 
       - name: Build Docker image
-        run: docker build -t ml-project:lab3 .
+        run: docker build -t ml-project:lab4 .
 
       - name: Trivy image scan
         uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: image
-          image-ref: ml-project:lab3
+          image-ref: ml-project:lab4
           format: json
           output: trivy-image.json
           exit-code: "0"
@@ -99,10 +99,10 @@ jobs:
         run: python -m src.security_gate tests/trivy_demo_critical.json
 
       - name: Check container user
-        run: test "$(docker run --rm --entrypoint id ml-project:lab3 -u)" != "0"
+        run: test "$(docker run --rm --entrypoint id ml-project:lab4 -u)" != "0"
 
       - name: Docker smoke test
-        run: docker run --rm ml-project:lab3
+        run: docker run -d --name ml-api-ci -p 127.0.0.1:8000:8000 -e API_TOKEN=ci-only-test-token ml-project:lab4 && curl --retry 10 --retry-delay 1 --retry-connrefused -fsS http://127.0.0.1:8000/health && docker rm -f ml-api-ci
 
       - name: Save commit and model hash
         run: git rev-parse HEAD > ci-commit.txt && sha256sum models/baseline.joblib > ci-model.sha256

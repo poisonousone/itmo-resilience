@@ -1,6 +1,8 @@
 *
 !src/
 !src/**
+!static/
+!static/**
 !models/
 !models/baseline.joblib
 !models/baseline.sha256

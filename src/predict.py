@@ -11,18 +11,18 @@ def load_model():
     return joblib.load(model_path)
 
 
-def predict(text):
+def validate_text(text):
     if not isinstance(text, str):
         raise TypeError("Input must be a string")
-
     if not text.strip():
         raise ValueError("Empty text")
-
     if len(text) > 10000:
         raise ValueError("Text is too long")
-
     if "\x00" in text:
         raise ValueError("Invalid character")
+    return text
 
-    return int(load_model().predict([text])[0])
+
+def predict(text):
+    return int(load_model().predict([validate_text(text)])[0])
 

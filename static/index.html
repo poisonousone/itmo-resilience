@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Prompt Injection Detector</title>
+</head>
+<body>
+    <h2>Проверка промпт-инъекций</h2>
+
+    <label>API-токен:</label>
+    <input id="key" type="password" autocomplete="off">
+
+    <p>
+        <textarea id="text" rows="6" cols="65" maxlength="10000"
+                  placeholder="Введите текст запроса"></textarea>
+    </p>
+
+    <button id="send">Проверить</button>
+    <pre id="result" role="status"></pre>
+
+    <script>
+        document.getElementById("send").onclick = async () => {
+            const output = document.getElementById("result");
+            output.textContent = "Проверка...";
+
+            try {
+                const response = await fetch("/predict", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-API-Key": document.getElementById("key").value
+                    },
+                    body: JSON.stringify({
+                        text: document.getElementById("text").value
+                    })
+                });
+
+                const data = await response.json();
+
+                output.textContent = response.ok
+                    ? JSON.stringify(data, null, 2)
+                    : `Ошибка HTTP ${response.status}: ${data.detail}`;
+            } catch {
+                output.textContent = "Не удалось подключиться к сервису";
+            }
+        };
+    </script>
+</body>
+</html>
+
