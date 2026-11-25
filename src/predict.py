@@ -25,3 +25,5 @@ def predict(text):
 
     return int(load_model().predict([text])[0])
 
+inp = input()
+print(predict(inp))
